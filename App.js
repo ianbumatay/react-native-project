@@ -1,6 +1,6 @@
-import { StatusBar} from 'expo-status-bar';
+// import { StatusBar} from 'expo-status-bar';
 import React, { useState} from 'react';
-import { StyleSheet, Text, View, Button, TextInput} from 'react-native';
+import {  Text, View, Button, TextInput} from 'react-native';
 
 export default function App() { 
 
@@ -8,26 +8,26 @@ export default function App() {
 
 
   return (
-    <View>
+    <View style={{padding: 70}}>
       <View>
-          <TextInput placeholder="Add Text Here"/>
+          <TextInput placeholder="Add Text Here" style={{borderColor: 'black', borderWidth: 1, padding: 10}}/>
       </View>
-       <View style={styles.container}> 
+       {/* <View style={styles.container}> 
         <Text>{outputText} </Text>
         <Button title="Press Button" onPress={()=> setOutputText("New Text")}/>
       <StatusBar style="auto" /> 
-    </View>
+    </View> */}
 
     </View>
    
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
