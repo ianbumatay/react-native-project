@@ -10,7 +10,8 @@ export default function App() {
   return (
     <View style={{padding: 70}}>
       <View>
-          <TextInput placeholder="Add Text Here" style={{borderColor: 'black', borderWidth: 1, padding: 10}}/>
+          <TextInput placeholder="Add Text Here" style={{borderColor: 'black', borderWidth: 1, padding: 10}}/> 
+          <Button title="Add"/>
       </View>
        {/* <View style={styles.container}> 
         <Text>{outputText} </Text>
