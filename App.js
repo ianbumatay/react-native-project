@@ -34,7 +34,7 @@ export default function App() {
       </View> 
       <View>
           {goals.map((goal)=> {
-            return <Text>{goal}</Text>
+            return <Text key={goal}>{goal}</Text>
 
           })}
       </View>
