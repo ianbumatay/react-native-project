@@ -20,11 +20,9 @@ export default function App() {
   }
 
 
-
-
   return (
     <View style={styles.container}>
-      <View style={styles.inputContainer}>
+      {/* <View style={styles.inputContainer}>
         <TextInput
           placeholder="Add Text Here"
           style={styles.textInput}
@@ -34,7 +32,8 @@ export default function App() {
         <Button
           title="Add"
           onPress={onPressHandler} />
-      </View>
+      </View> */} 
+      <GoalsInput/>
 
       <FlatList
         keyExtractor={(item, index) => item.id}
@@ -50,18 +49,4 @@ const styles = StyleSheet.create({
   container: {
     padding: 70
   },
-  inputContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-  textInput: {
-    width: '80%',
-    borderColor: 'black',
-    borderWidth: 1,
-    padding: 10
-  },
-
-
-
 });
