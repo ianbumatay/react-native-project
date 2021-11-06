@@ -1,6 +1,6 @@
 // import { StatusBar} from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, ScrollView } from 'react-native';
 
 export default function App() {
 
@@ -33,10 +33,11 @@ export default function App() {
           onPress={onPressHandler} />
       </View>
       <View>
-        {goals.map((goal) => { return <View style={styles.list}><Text key={goal}> {goal} </Text></View>})}
+        <ScrollView>
+          {goals.map((goal) => { return <View key={goal.id} style={styles.list}><Text> {goal} </Text></View> })}
+        </ScrollView>
       </View>
     </View>
-
   );
 }
 
@@ -54,15 +55,15 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
     padding: 10
-  }, 
+  },
   list: {
-    padding:10,
+    padding: 10,
     // margin: 10 
     marginVertical: 10,//margin on top and buttom 
-    borderWidth: 1, 
+    borderWidth: 1,
     borderColor: 'black',
-    backgroundColor: 'grey'
-    
+    backgroundColor: 'green'
+
 
   }
 });
