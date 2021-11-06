@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 export default function App() {
 
-  const [InputGoal, setInputGoal] = useState(" "); 
+  const [InputGoal, setInputGoal] = useState(" ");
   const [goals, setGoals] = useState([])
 
   const goalInputHandler = (enteredText) => {
@@ -13,7 +13,7 @@ export default function App() {
 
   const onPressHandler = () => {
     // setGoals([...goal, InputGoal]) 
-    setGoals( currentState => [...currentState, InputGoal])
+    setGoals(currentState => [...currentState, InputGoal])
   }
 
 
@@ -31,12 +31,9 @@ export default function App() {
         <Button
           title="Add"
           onPress={onPressHandler} />
-      </View> 
+      </View>
       <View>
-          {goals.map((goal)=> {
-            return <Text key={goal}>{goal}</Text>
-
-          })}
+        {goals.map((goal) => { return <View style={styles.list}><Text key={goal}> {goal} </Text></View>})}
       </View>
     </View>
 
@@ -57,5 +54,15 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
     padding: 10
+  }, 
+  list: {
+    padding:10,
+    // margin: 10 
+    marginVertical: 10,//margin on top and buttom 
+    borderWidth: 1, 
+    borderColor: 'black',
+    backgroundColor: 'grey'
+    
+
   }
 });
