@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const Goals = (props) => {
     return (
         <View style={styles.list}>
-            <Text> {itemData.item.value} </Text>
+            <Text> {props.title} </Text>
         </View>
     );
 };
@@ -19,4 +19,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'green'
     }
 
-})
+}) 
+
+export default Goals

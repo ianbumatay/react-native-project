@@ -1,6 +1,7 @@
 // import { StatusBar} from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, FlatList } from 'react-native';
+import Goals from './components/Goals'
 
 export default function App() {
 
@@ -14,7 +15,7 @@ export default function App() {
   const onPressHandler = () => {
     // setGoals([...goal, InputGoal]) 
     setGoals(currentState => [...currentState,
-      { key: Math.random().toString(), value: InputGoal }
+    { key: Math.random().toString(), value: InputGoal }
     ])
   }
 
@@ -34,11 +35,13 @@ export default function App() {
           title="Add"
           onPress={onPressHandler} />
       </View>
-      <View>
-        <FlatList keyExtractor={(item, index) => item.id}   data={goals} renderItem={itemData => (
-        //    <View style={styles.list}><Text> {itemData.item.value} </Text></View>
-         )} />
-      </View>
+
+      <FlatList
+        keyExtractor={(item, index) => item.id}
+        data={goals}
+        renderItem={itemData => <Goals title={itemData.item.value} />}
+      />
+
     </View>
   );
 }
@@ -60,5 +63,5 @@ const styles = StyleSheet.create({
   },
 
 
-  
+
 });
