@@ -1,34 +1,47 @@
 // import { StatusBar} from 'expo-status-bar';
-import React, { useState} from 'react';
-import {  Text, View, Button, TextInput} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
-export default function App() { 
+export default function App() {
 
-  const [outputText, setOutputText] = useState("Ian's Raact Native App")
+  const [goal, setGoal] = useState(" ");
+
+  const goalInputHandler = (enteredText) => {
+    setGoal(enteredText);
+  };
+
+
 
 
   return (
-    <View style={{padding: 70}}>
-      <View>
-          <TextInput placeholder="Add Text Here" style={{borderColor: 'black', borderWidth: 1, padding: 10}}/> 
-          <Button title="Add"/>
+    <View style={styles.container}>
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder="Add Text Here"
+          style={styles.textInput} 
+          onChangeText={goalInputHandler}
+          value={goal}
+        />
+        <Button title="Add" />
       </View>
-       {/* <View style={styles.container}> 
-        <Text>{outputText} </Text>
-        <Button title="Press Button" onPress={()=> setOutputText("New Text")}/>
-      <StatusBar style="auto" /> 
-    </View> */}
-
     </View>
-   
+
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+const styles = StyleSheet.create({
+  container: {
+    padding: 70
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  textInput: {
+    width: '80%',
+    borderColor: 'black',
+    borderWidth: 1,
+    padding: 10
+  }
+});
