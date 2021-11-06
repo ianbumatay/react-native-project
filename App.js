@@ -2,20 +2,21 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, FlatList } from 'react-native';
 import Goals from './components/Goals'
+import GoalsInput from './components/GoalsInput';
 
 export default function App() {
 
-  const [InputGoal, setInputGoal] = useState(" ");
-  const [goals, setGoals] = useState([])
+  // const [InputGoal, setInputGoal] = useState(" ");
+   const [goals, setGoals] = useState([])
 
-  const goalInputHandler = (enteredText) => {
-    setInputGoal(enteredText);
-  };
+  // const goalInputHandler = (enteredText) => {
+  //   setInputGoal(enteredText);
+  // };
 
-  const onPressHandler = () => {
+  const onPressHandler = (InputTitle) => {
     // setGoals([...goal, InputGoal]) 
     setGoals(currentState => [...currentState,
-    { key: Math.random().toString(), value: InputGoal }
+    { key: Math.random().toString(), value: InputTitle}
     ])
   }
 
@@ -33,7 +34,7 @@ export default function App() {
           title="Add"
           onPress={onPressHandler} />
       </View> */} 
-      <GoalsInput/>
+      <GoalsInput onPressFunc={onPressHandler}/>
 
       <FlatList
         keyExtractor={(item, index) => item.id}
