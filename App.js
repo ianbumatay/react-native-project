@@ -1,6 +1,6 @@
 // import { StatusBar} from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, FlatList} from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, FlatList } from 'react-native';
 
 export default function App() {
 
@@ -13,7 +13,9 @@ export default function App() {
 
   const onPressHandler = () => {
     // setGoals([...goal, InputGoal]) 
-    setGoals(currentState => [...currentState, InputGoal])
+    setGoals(currentState => [...currentState,
+      { key: Math.random().toString(), value: InputGoal }
+    ])
   }
 
 
@@ -33,9 +35,9 @@ export default function App() {
           onPress={onPressHandler} />
       </View>
       <View>
-        <FlatList data={goals} renderItem={itemData => (
-            <View style={styles.list}><Text> {itemData.item} </Text></View> 
-        )}/>
+        <FlatList keyExtractor={(item, index) => item.id}   data={goals} renderItem={itemData => (
+        //    <View style={styles.list}><Text> {itemData.item.value} </Text></View>
+         )} />
       </View>
     </View>
   );
@@ -56,14 +58,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10
   },
-  list: {
-    padding: 10,
-    // margin: 10 
-    marginVertical: 10,//margin on top and buttom 
-    borderWidth: 1,
-    borderColor: 'black',
-    backgroundColor: 'green'
 
 
-  }
+  
 });
