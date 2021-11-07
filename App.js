@@ -18,8 +18,8 @@ export default function App() {
   } 
 
   const onDeleteHandler = () => {
-    setGoals(currentGoal => {
-      return currentGoal.filter((goal)=> {goal.id !== goal_id});
+    setGoals(currentGoals => {
+      return currentGoals.filter((goal)=> {goal.id !== goal_id});
     });
   }
 
