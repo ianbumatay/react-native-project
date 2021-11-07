@@ -2,13 +2,12 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const Goal = (props) => {
-    return ( 
-        <TouchableOpacity onPress={}>
+    return (
+        <TouchableOpacity onPress={ }>
             <View style={styles.list}>
-            <Text> {props.title} </Text>
-        </View>
+                <Text> {props.title} </Text>
+            </View>
         </TouchableOpacity>
-        
     );
 };
 
@@ -21,6 +20,6 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         backgroundColor: 'green'
     }
-}) 
+})
 
 export default Goal
