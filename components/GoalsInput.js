@@ -11,18 +11,21 @@ const GoalsInput = (props) => {
     };
 
 
-    return (
-        <View style={styles.inputContainer}>
-            <TextInput
-                placeholder="Add Text Here"
-                style={styles.textInput}
-                onChangeText={goalInputHandler}
-                value={props.InputGoal}
-            />
-            <Button
-                title="Add"
-                onPress={props.onPressFunc.bind(this, InputGoal)} />
-        </View>
+    return ( 
+        <Modal>
+            <View style={styles.inputContainer}>
+                <TextInput
+                    placeholder="Add Text Here"
+                    style={styles.textInput}
+                    onChangeText={goalInputHandler}
+                    value={props.InputGoal}
+                />
+                <Button
+                    title="Add"
+                    onPress={props.onPressFunc.bind(this, InputGoal)}
+                />
+            </View>
+        </Modal>
     );
 };
 
