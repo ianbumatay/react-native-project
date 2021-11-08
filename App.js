@@ -1,6 +1,6 @@
 // import { StatusBar} from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList, Button } from 'react-native';
 import Goal from './components/Goal'
 import GoalsInput from './components/GoalsInput';
 
@@ -25,7 +25,8 @@ export default function App() {
 
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container}> 
+      <Button title="Add Goal"/>
       <GoalsInput onPressFunc={onPressHandler} />
       <FlatList
         keyExtractor={(item, index) => item.id}
