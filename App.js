@@ -6,7 +6,9 @@ import GoalsInput from './components/GoalsInput';
 
 export default function App() {
 
-  const [goals, setGoals] = useState([])
+  const [goals, setGoals] = useState([]) 
+  
+  const [isAddMode, setIsAddMode] = useState(false);
 
 
   const onPressHandler = (InputTitle) => {
@@ -26,7 +28,7 @@ export default function App() {
 
   return (
     <View style={styles.container}> 
-      <Button title="Add Goal"/>
+      <Button title="Add Goal" onPress={()=> setIsAddMode(true)}/>
       <GoalsInput onPressFunc={onPressHandler} />
       <FlatList
         keyExtractor={(item, index) => item.id}
