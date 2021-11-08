@@ -29,7 +29,7 @@ export default function App() {
   return (
     <View style={styles.container}> 
       <Button title="Add Goal" onPress={()=> setIsAddMode(true)}/>
-      <GoalsInput onPressFunc={onPressHandler} />
+      <GoalsInput isAddMode={isAddMode} onPressFunc={onPressHandler} />
       <FlatList
         keyExtractor={(item, index) => item.id}
         data={goals}

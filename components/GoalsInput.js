@@ -12,7 +12,7 @@ const GoalsInput = (props) => {
 
 
     return ( 
-        <Modal visible={false}>
+        <Modal visible={props.isAddMode}> 
             <View style={styles.inputContainer}>
                 <TextInput
                     placeholder="Add Text Here"
