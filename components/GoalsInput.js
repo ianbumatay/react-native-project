@@ -33,8 +33,9 @@ export default GoalsInput
 
 const styles = StyleSheet.create({
     inputContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        flex: 1,
+        // flexDirection: 'row',
+        justifyContent: 'center',
         alignItems: 'center'
     },
     textInput: {
