@@ -27,6 +27,7 @@ const GoalsInput = (props) => {
                 <Button
                     title="Cancel"
                     color="red"
+                    onPress={props.onCancelFunc}
                 />
             </View>
         </Modal>
