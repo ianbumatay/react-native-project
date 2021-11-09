@@ -24,6 +24,10 @@ export default function App() {
     setGoals(currentGoals => {
       return currentGoals.filter((goal) => goal.id !== goalId );
     });
+  } 
+
+  const cancelGoalHnadler = () => {
+    setIsAddMode(false)
   }
 
 

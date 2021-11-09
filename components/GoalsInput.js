@@ -11,8 +11,8 @@ const GoalsInput = (props) => {
     };
 
 
-    return ( 
-        <Modal visible={props.isAddMode} animationType="slide"> 
+    return (
+        <Modal visible={props.isAddMode} animationType="slide">
             <View style={styles.inputContainer}>
                 <TextInput
                     placeholder="Add Text Here"
@@ -23,8 +23,11 @@ const GoalsInput = (props) => {
                 <Button
                     title="Add"
                     onPress={props.onPressFunc.bind(this, InputGoal)}
-                /> 
-                <Button title="Cancel" color="red"/>
+                />
+                <Button
+                    title="Cancel"
+                    color="red"
+                />
             </View>
         </Modal>
     );
