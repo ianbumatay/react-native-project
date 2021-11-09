@@ -23,7 +23,8 @@ const GoalsInput = (props) => {
                 <Button
                     title="Add"
                     onPress={props.onPressFunc.bind(this, InputGoal)}
-                />
+                /> 
+                <Button title="Cancel" color="red"/>
             </View>
         </Modal>
     );
